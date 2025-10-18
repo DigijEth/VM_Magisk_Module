@@ -43,7 +43,7 @@ This Magisk module solves both problems by keeping the Terminal app running in t
 
 ```bash
 # Clone or download these files
-terminal_vm_persist/
+VM_Magisk_Module/
 ├── module.prop
 ├── service.sh
 ├── uninstall.sh
@@ -54,7 +54,7 @@ terminal_vm_persist/
 2. **Package the module:**
 
 ```bash
-cd terminal_vm_persist
+cd VM_Magisk_Module
 zip -r terminal_vm_persist.zip .
 ```
 
@@ -68,12 +68,12 @@ zip -r terminal_vm_persist.zip .
 
 ```bash
 # Push files to Magisk modules directory
-adb push terminal_vm_persist /data/adb/modules/
+adb push VM_Magisk_Module /data/adb/modules/
 
 # Set proper permissions
 adb shell
 su
-cd /data/adb/modules/terminal_vm_persist
+cd /data/adb/modules/VM_Magisk_Module
 chmod 755 *.sh
 reboot
 ```
@@ -94,22 +94,22 @@ Use the included control script for manual management:
 
 ```bash
 # Check VM status
-su -c /data/adb/modules/terminal_vm_persist/vm_control.sh status
+su -c /data/adb/modules/VM_Magisk_Module/vm_control.sh status
 
 # Protect processes immediately
-su -c /data/adb/modules/terminal_vm_persist/vm_control.sh protect
+su -c /data/adb/modules/VM_Magisk_Module/vm_control.sh protect
 
 # Start Terminal app
-su -c /data/adb/modules/terminal_vm_persist/vm_control.sh start
+su -c /data/adb/modules/VM_Magisk_Module/vm_control.sh start
 
 # View VM information
-su -c /data/adb/modules/terminal_vm_persist/vm_control.sh info
+su -c /data/adb/modules/VM_Magisk_Module/vm_control.sh info
 
 # Show VM logs
-su -c /data/adb/modules/terminal_vm_persist/vm_control.sh logs
+su -c /data/adb/modules/VM_Magisk_Module/vm_control.sh logs
 
 # Force restart Terminal
-su -c /data/adb/modules/terminal_vm_persist/vm_control.sh force-restart
+su -c /data/adb/modules/VM_Magisk_Module/vm_control.sh force-restart
 ```
 
 ## 🔍 Verification
@@ -222,16 +222,16 @@ getenforce
 
 ```bash
 # Check module installation
-ls -l /data/adb/modules/terminal_vm_persist/
+ls -l /data/adb/modules/VM_Magisk_Module/
 
 # Verify file permissions
-ls -l /data/adb/modules/terminal_vm_persist/*.sh
+ls -l /data/adb/modules/VM_Magisk_Module/*.sh
 
 # Check service logs
 logcat -s Terminal-Persist
 
 # Manually start service
-su -c "/data/adb/modules/terminal_vm_persist/service.sh &"
+su -c "/data/adb/modules/VM_Magisk_Module/service.sh &"
 ```
 
 ## ⚠️ Limitations
@@ -272,8 +272,8 @@ Use `vm` command with custom scripts:
 ### Manual Cleanup
 ```bash
 su
-/data/adb/modules/terminal_vm_persist/uninstall.sh
-rm -rf /data/adb/modules/terminal_vm_persist
+/data/adb/modules/VM_Magisk_Module/uninstall.sh
+rm -rf /data/adb/modules/VM_Magisk_Module
 reboot
 ```
 
