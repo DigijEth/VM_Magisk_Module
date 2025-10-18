@@ -1,0 +1,17 @@
+# Terminal VM Persistence Configuration
+# Place this in the module directory
+
+# Set debuggable mode (may be needed for some VM operations)
+# ro.debuggable=1
+
+# Disable battery optimization for Terminal app
+# This should be done through Settings, but can be enforced here
+# pm.dexopt.disable-bg-dexopt=true
+
+# VM Memory Configuration (optional - advanced users only)
+# These properties may help with VM stability
+# ro.config.low_ram=false
+# ro.config.max_starting_bg=8
+
+# Note: Most configurations should be done through
+# Developer Options > Linux development environment settings
