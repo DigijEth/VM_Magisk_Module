@@ -228,7 +228,7 @@ chmod +x script_name.sh
 
 ## All Artifacts Reference
 
-Copy content from these conversation artifacts:
+Copy content from these artifacts in the repo:
 
 1. **module.prop** → "module.prop"
 2. **service.sh** → "service.sh"  
